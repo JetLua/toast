@@ -1,5 +1,5 @@
 {
-	"name": "aaa",
+	"name": "@iro/toast",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
@@ -19,9 +19,16 @@
 	"files": [
 		"dist"
 	],
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/JetLua/toast"
+  },
 	"peerDependencies": {
 		"svelte": "^3.54.0"
 	},
+	"publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
@@ -31,12 +38,10 @@
 		"svelte-check": "^3.0.1",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
-		"vite": "^4.2.0"
+		"vite": "^4.2.0",
+		"sass": "^1.60.0"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module",
-	"dependencies": {
-		"sass": "^1.60.0"
-	}
+	"type": "module"
 }

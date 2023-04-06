@@ -1,0 +1,6 @@
+src
+static
+.svelte-kit
+.svelte.config.js
+tsconfig.json
+vite.config.ts
