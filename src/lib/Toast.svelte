@@ -1,16 +1,42 @@
 <script lang="ts" context="module">
   import {slide} from 'svelte/transition'
-  import {msgs, addMsg} from './store'
+  import {msgs, addMsg, removeMsg, auto, closeable} from './store'
 
-  export function push(msg: string) {
-    addMsg(msg)
+
+  export function show(msg: string, opts?: Parameters<typeof addMsg>[1]) {
+    return addMsg(msg, opts)
+  }
+
+  export function hide(i: number) {
+    removeMsg(i)
   }
 </script>
 
+<script lang="ts">
+  export let style = ''
+  let _closeable = false
+  let _auto = true
 
-<section class="root">
+  export {_auto as auto, _closeable as closeable}
+
+  $: auto.set(_auto)
+  $: closeable.set(_closeable)
+</script>
+
+
+<section class="root" style={style}>
   {#each $msgs as msg (msg.id)}
-    <div class="item" transition:slide|local>{msg.content}</div>
+    <div class="item" transition:slide|local>
+      <div>{msg.content}</div>
+      {#if msg.closeable ?? $closeable}
+        <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+          on:click={() => removeMsg(msg.id)}>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M18 6l-12 12"></path>
+          <path d="M6 6l12 12"></path>
+        </svg>
+      {/if}
+    </div>
   {/each}
 </section>
 
@@ -25,8 +51,9 @@
   }
 
   .item {
-    background-color: #333333d7;
-    color: #fff;
+    background-color: var(--background-color, #333333cf);
+    color: var(--color, #fff);
+    font-size: var(--font-size, .9rem);
     width: fit-content;
     padding: 0 1rem;
     min-width: 8rem;
@@ -36,7 +63,15 @@
     height: 3rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     overflow: hidden;
+
+    svg {
+      margin-left: 1rem;
+      width: var(--icon-width, var(--icon-size, 22px));
+      height: var(--icon-height, var(--icon-size, 22px));
+      stroke: var(--icon-color, #fff);
+      pointer-events: auto;
+    }
   }
 </style>

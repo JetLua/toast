@@ -17,4 +17,6 @@ import {Toast, push} from '@iro/toast'
 
 // +layout.svelte
 <Toast/>
+<Toast --color="white" --background-color="green" --icon-size="20px" auto={false}/>
+<Toast --color="white" --background-color="green" --icon-size="20px" closeable={false} --icon-color="yellow"/>
 ```

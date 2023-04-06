@@ -1,1 +1,1 @@
-export {default as Toast, push} from './Toast.svelte'
+export {default as Toast, show, hide} from './Toast.svelte'
