@@ -1,6 +1,6 @@
 {
 	"name": "@iro/toast",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -20,15 +20,15 @@
 		"dist"
 	],
 	"repository": {
-    "type": "git",
-    "url": "https://github.com/JetLua/toast"
-  },
+		"type": "git",
+		"url": "https://github.com/JetLua/toast"
+	},
 	"peerDependencies": {
 		"svelte": "^3.54.0"
 	},
 	"publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
+		"registry": "https://registry.npmjs.org"
+	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
