@@ -1,6 +1,7 @@
 {
 	"name": "@iro/toast",
 	"version": "0.0.2",
+	"description": "A toast component implemented based on Svelte.",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
