@@ -3,6 +3,7 @@
 </script>
 
 <Toast/>
+
 <button on:click={() => {
   push('ok')
-}}>added</button>
+}}>Touch Me</button>
