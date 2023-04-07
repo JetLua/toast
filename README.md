@@ -13,7 +13,7 @@ pnpm i @iro/toast
 import {Toast, toast} from '@iro/toast'
 
 // +page.svelte
-<button on:click={() => toast('Wow!!!')}>toast</button>
+<button on:click={() => toast.show('Wow!!!')}>toast</button>
 
 // +layout.svelte
 <Toast/>
