@@ -3,24 +3,26 @@
   import {msgs, addMsg, removeMsg, auto, closeable} from './store'
 
 
-  export function show(msg: string, opts?: Parameters<typeof addMsg>[1]) {
+  function show(msg: string, opts?: Parameters<typeof addMsg>[1]) {
     return addMsg(msg, opts)
   }
 
-  export function hide(i: number) {
+  function hide(i: number) {
     removeMsg(i)
   }
+
+  export const toast = {show, hide}
 </script>
 
 <script lang="ts">
-  export let style = ''
+  let style = ''
   let _closeable = false
   let _auto = true
 
-  export {_auto as auto, _closeable as closeable}
-
   $: auto.set(_auto)
   $: closeable.set(_closeable)
+
+  export {_auto as auto, _closeable as closeable, style}
 </script>
 
 
@@ -48,6 +50,7 @@
     width: 100%;
     height: fit-content;
     pointer-events: none;
+    z-index: 9999;
   }
 
   .item {
@@ -59,12 +62,13 @@
     min-width: 8rem;
     margin: 1rem auto 0;
     max-width: 40rem;
-    border-radius: .2rem;
+    border-radius: var(--border-radius, .2rem);
     height: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
+    font-family: var(--font-family, sans-serif);
 
     svg {
       margin-left: 1rem;
@@ -72,6 +76,7 @@
       height: var(--icon-height, var(--icon-size, 22px));
       stroke: var(--icon-color, #fff);
       pointer-events: auto;
+      cursor: pointer;
     }
   }
 </style>

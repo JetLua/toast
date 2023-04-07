@@ -24,7 +24,7 @@ export function addMsg(content: string, opts?: {auto?: boolean, duration?: numbe
   id++
 
   msgs.update(msgs => {
-    auto && setTimeout((id: number) => removeMsg(id), opts!.duration, id)
+    opts!.auto && setTimeout((id: number) => removeMsg(id), opts!.duration, id)
     return msgs.concat({content, id, auto: opts?.auto!, closeable: opts?.closeable!})
   })
 
