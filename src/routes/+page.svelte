@@ -14,7 +14,7 @@
   import {Toast, toast} from '@iro/toast'
 <\/script>
 <Toast closeable --color="white" --background-color="green" --icon-size="20px" auto={false} --icon-color="yellow"/>
-<button on:click={() => toast('Wow!!!')}>toast</button>`
+<button on:click={() => toast.show('Wow!!!')}>toast</button>`
   ]
 </script>
 
