@@ -1,6 +1,5 @@
 <script lang="ts">
   import {HighlightSvelte, LineNumbers} from 'svelte-highlight'
-  import ts from 'svelte-highlight/languages/typescript'
   import 'svelte-highlight/styles/atom-one-dark.css'
 
   import {Toast, toast} from '$lib'
