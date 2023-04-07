@@ -10,10 +10,10 @@ pnpm i @iro/toast
 
 ### svelte
 ```ts
-import {Toast, push} from '@iro/toast'
+import {Toast, toast} from '@iro/toast'
 
 // +page.svelte
-<button on:click={() => push('Wow!!!')}>toast</button>
+<button on:click={() => toast('Wow!!!')}>toast</button>
 
 // +layout.svelte
 <Toast/>
