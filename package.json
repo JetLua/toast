@@ -1,6 +1,6 @@
 {
 	"name": "@iro/toast",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A toast component implemented based on Svelte.",
 	"keywords": [
 		"svelte",
