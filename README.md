@@ -1,6 +1,8 @@
 # Toast
 A toast component implemented based on Svelte.
 
+[DEMO](https://toast-alpha.vercel.app)
+
 ## Usage
 
 ### install

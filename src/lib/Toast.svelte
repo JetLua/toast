@@ -28,9 +28,11 @@
 
 <section class="root" style={style}>
   {#each $msgs as msg (msg.id)}
-    <div class="item" transition:slide|local>
+    {@const closeable = msg.closeable ?? $closeable}
+    <div class="item" transition:slide|local
+      style:justify-content={closeable ? 'space-between' : 'center'}>
       <div>{msg.content}</div>
-      {#if msg.closeable ?? $closeable}
+      {#if closeable}
         <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
           on:click={() => removeMsg(msg.id)}>
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -66,7 +68,6 @@
     height: 3rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     overflow: hidden;
     font-family: var(--font-family, sans-serif);
 

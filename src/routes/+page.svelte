@@ -12,12 +12,12 @@
 `<script lang="ts">
   import {Toast, toast} from '@iro/toast'
 <\/script>
-<Toast closeable --color="white" --background-color="green" --icon-size="20px" auto={false} --icon-color="yellow"/>
+<Toast --color="white" --background-color="green" --icon-size="20px" --icon-color="yellow"/>
 <button on:click={() => toast.show('Wow!!!')}>toast</button>`
   ]
 </script>
 
-<Toast closeable --color="white" --background-color="green" --icon-size="20px" auto={false} --icon-color="yellow"/>
+<Toast --color="white" --background-color="green" --icon-size="20px" --icon-color="yellow"/>
 
 
 {#each codes as code}
